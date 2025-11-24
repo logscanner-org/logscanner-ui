@@ -1,0 +1,30 @@
+.logviewer {
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.logviewer__line {
+  display: flex;
+  gap: 12px;
+  padding: 8px 12px;
+  align-items: flex-start;
+  border-bottom: 1px solid #f5f5f5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.logviewer__index {
+  width: 56px;
+  color: #888;
+  text-align: right;
+  flex: 0 0 56px;
+  user-select: none;
+}
+
+.logviewer__text {
+  flex: 1 1 auto;
+}

@@ -1,6 +1,7 @@
 import './App.css'
 import { Layout, Drawer, Input, Button, Space } from 'antd'
 import Header from './components/Header'
+import LogViewer from './components/LogViewer'
 import { useState } from 'react'
 
 const { Content } = Layout
@@ -33,6 +34,8 @@ function App() {
     // TODO: call backend analyze endpoint and display results
   }
 
+  const lines = loadedText ? loadedText.split(/\r?\n/) : []
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Header onOpenPaste={handleOpenPaste} onLoadFile={handleLoadFile} onAnalyze={handleAnalyze} />
@@ -57,7 +60,7 @@ function App() {
         <div style={{ background: '#fff', minHeight: 360, padding: 16 }}>
           <h2>Welcome to Log Scanner</h2>
           <p>Paste or upload logs, choose the timestamp format, and click <strong>Analyze</strong>.</p>
-          <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{loadedText ? loadedText.substring(0, 2000) : 'No logs loaded yet.'}</pre>
+          <LogViewer lines={lines} />
         </div>
       </Content>
     </Layout>
