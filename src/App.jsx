@@ -1,6 +1,7 @@
 import './App.css'
 import { Layout, Drawer, Input, Button, Space } from 'antd'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import LogViewer from './components/LogViewer'
 import { useState } from 'react'
 
@@ -63,6 +64,7 @@ function App() {
           <LogViewer lines={lines} />
         </div>
       </Content>
+      <Footer />
     </Layout>
   )
 }

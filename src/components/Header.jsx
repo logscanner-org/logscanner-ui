@@ -35,9 +35,12 @@ export default function Header({ onOpenPaste, onLoadFile, onAnalyze }) {
           <a href="#" aria-label="Log Scanner home" className="logscanner-header__brand">
             <img src="/logscanner-logo.svg" alt="Log Scanner logo" className="logscanner-header__logo" />
             <div className="logscanner-header__title">
-              <Typography.Title level={4} style={{ margin: 0, color: 'inherit', lineHeight: 1 }}>
-                Log Scanner
-              </Typography.Title>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+                <Typography.Title level={4} style={{ margin: 0, color: 'inherit', lineHeight: 1 }}>
+                  Log Scanner
+                </Typography.Title>
+                <Typography.Text type="secondary">v0.1.0</Typography.Text>
+              </div>
             </div>
           </a>
         </div>
