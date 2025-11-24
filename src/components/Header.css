@@ -1,0 +1,52 @@
+.logscanner-header {
+  background: #fff;
+  padding: 0 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+.logscanner-header__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logscanner-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logscanner-header__logo {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  vertical-align: middle;
+}
+
+.logscanner-header__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logscanner-header__controls {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .logscanner-header__controls .ant-select,
+  .logscanner-header__controls .ant-btn,
+  .logscanner-header__controls .ant-input {
+    width: auto !important;
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
