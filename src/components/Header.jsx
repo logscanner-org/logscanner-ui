@@ -6,22 +6,18 @@ import './Header.css'
 const { Header: AntHeader } = Layout
 const { Option } = Select
 
-export default function Header({ onOpenPaste, onLoadFile, onAnalyze }) {
-  const [timestampFormat, setTimestampFormat] = useState('ISO 8601')
+export default function Header({ onOpenPaste, onLoadFile, onAnalyze, timestampFormat, setTimestampFormat, uploading }) {
   const [customFormat, setCustomFormat] = useState('')
 
   const uploadProps = {
     accept: '.log,.txt,.json,.gz',
     showUploadList: false,
     beforeUpload(file) {
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        const text = e.target.result
-        onLoadFile?.(file, text)
-      }
-      reader.readAsText(file)
-      return false // prevent antd from uploading
+      // Pass the File object to parent so it can upload using FormData (suitable for large files)
+      onLoadFile?.(file)
+      return false // prevent antd from uploading automatically
     },
+    disabled: uploading,
   }
   const handleAnalyze = () => {
     const fmt = timestampFormat === 'Custom' ? customFormat : timestampFormat
@@ -53,7 +49,7 @@ export default function Header({ onOpenPaste, onLoadFile, onAnalyze }) {
               <Button icon={<UploadOutlined />}>Upload</Button>
             </Upload>
 
-            <Select value={timestampFormat} onChange={(v) => setTimestampFormat(v)} style={{ width: 220 }}>
+            <Select value={timestampFormat} onChange={(v) => setTimestampFormat(v)} style={{ width: 220 }} disabled={uploading}>
               <Option value="ISO 8601">ISO 8601</Option>
               <Option value="YYYY-MM-DD HH:mm:ss">YYYY-MM-DD HH:mm:ss</Option>
               <Option value="DD/MM/YYYY HH:mm:ss">DD/MM/YYYY HH:mm:ss</Option>
@@ -64,7 +60,7 @@ export default function Header({ onOpenPaste, onLoadFile, onAnalyze }) {
               <Input placeholder="Custom format" value={customFormat} onChange={(e) => setCustomFormat(e.target.value)} />
             )}
 
-            <Button type="primary" onClick={handleAnalyze}>Analyze</Button>
+            <Button type="primary" onClick={() => onAnalyze?.({ timestampFormat: timestampFormat === 'Custom' ? customFormat : timestampFormat })} loading={uploading}>Analyze</Button>
           </Space>
         </div>
       </div>

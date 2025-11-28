@@ -1,0 +1,47 @@
+.job-card {
+  max-width: 780px;
+  margin: 8px auto;
+  border-radius: 6px;
+}
+
+.job-card .ant-card-body {
+  padding: 10px 12px;
+}
+
+.job-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.job-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.job-card__stats {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.job-card .ant-tag {
+  font-size: 12px;
+  padding: 0 6px;
+}
+
+.job-card .ant-typography {
+  font-size: 13px;
+}
+
+.job-card__head .ant-typography strong {
+  max-width: 240px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
