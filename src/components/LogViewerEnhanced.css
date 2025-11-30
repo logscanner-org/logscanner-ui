@@ -1,0 +1,268 @@
+/* LogViewer Enhanced Styles */
+
+.log-viewer-enhanced {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Summary Card */
+.summary-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+}
+
+.summary-card .ant-statistic-title {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.time-range {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Filter Card */
+.filter-card {
+  border: 1px solid #e2e8f0;
+}
+
+.filter-card label {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.advanced-filters {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+  margin-top: 8px;
+}
+
+/* Level Filter Tags */
+.level-filter-tag {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.level-filter-tag:hover {
+  opacity: 0.8;
+}
+
+.level-filter-tag.selected {
+  font-weight: 600;
+}
+
+/* Results Info */
+.results-info {
+  padding: 4px 0;
+}
+
+/* Logs Table */
+.logs-table .ant-table-thead > tr > th {
+  background: #f8fafc;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  padding: 10px 12px;
+}
+
+.logs-table .ant-table-tbody > tr > td {
+  padding: 8px 12px;
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.logs-table .ant-table-tbody > tr:hover > td {
+  background: #f1f5f9 !important;
+}
+
+/* Log Row Styles */
+.log-row-error {
+  background: #fff2f0 !important;
+}
+
+.log-row-error:hover td {
+  background: #ffe7e5 !important;
+}
+
+.log-row-warn {
+  background: #fffbe6 !important;
+}
+
+.log-row-warn:hover td {
+  background: #fff1b8 !important;
+}
+
+/* Message Cell */
+.log-message-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.log-message-cell .ant-typography {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  font-size: 12px;
+}
+
+/* Log Detail Drawer */
+.log-detail {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.log-detail .ant-typography-secondary {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.message-card {
+  background: #f8fafc;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  font-size: 13px;
+}
+
+.stacktrace-card {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+.stacktrace-card pre {
+  color: #fca5a5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+}
+
+/* Level Tag Styling */
+.ant-tag {
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+/* Pagination */
+.logs-table .ant-pagination {
+  margin: 16px 0;
+}
+
+.logs-table .ant-pagination-item-active {
+  border-color: #3b82f6;
+}
+
+.logs-table .ant-pagination-item-active a {
+  color: #3b82f6;
+}
+
+/* Search Input */
+.ant-input-search .ant-input-affix-wrapper {
+  border-radius: 6px 0 0 6px;
+}
+
+.ant-input-search .ant-btn {
+  border-radius: 0 6px 6px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .summary-card .ant-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 12px;
+  }
+  
+  .filter-card .ant-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* Loading State */
+.logs-table .ant-spin-nested-loading > div > .ant-spin {
+  max-height: none;
+}
+
+/* Empty State */
+.log-viewer-enhanced .ant-empty {
+  padding: 60px 0;
+}
+
+/* Scrollbar Styling */
+.logs-table .ant-table-body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.logs-table .ant-table-body::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.logs-table .ant-table-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.logs-table .ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Badge Styling */
+.ant-badge-count {
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  line-height: 16px;
+  padding: 0 4px;
+}
+
+/* Collapse Styling */
+.log-detail .ant-collapse {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+}
+
+.log-detail .ant-collapse-header {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.log-detail .ant-collapse-content {
+  background: #f8fafc;
+}
+
+.log-detail .ant-collapse-content pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Dropdown Menu */
+.ant-dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.filter-card .ant-btn {
+  border-radius: 6px;
+}
+
+/* Select Styling */
+.advanced-filters .ant-select-selector {
+  border-radius: 6px !important;
+}
+
+/* Date Picker Styling */
+.advanced-filters .ant-picker {
+  border-radius: 6px;
+}
+
+/* Checkbox Styling */
+.advanced-filters .ant-checkbox-wrapper {
+  font-size: 13px;
+}

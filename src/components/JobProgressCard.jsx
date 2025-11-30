@@ -109,7 +109,7 @@ export default function JobProgressCard({ initialJob, onDismiss, onComplete }) {
   return (
     <Card className="job-card" bordered>
       <div className="job-card__head">
-        <Space size={8} align="center">
+        <Space size={6} align="center">
           <Tag color={STATUS_COLOR[status] || 'default'}>{status}</Tag>
           <Text strong title={fileName}>{fileName}</Text>
           <Text type="secondary">{formatBytes(fileSize)}</Text>
@@ -124,8 +124,8 @@ export default function JobProgressCard({ initialJob, onDismiss, onComplete }) {
         </div>
       </div>
 
-      <div style={{ marginTop: 2 }}>
-        <Progress percent={Math.round(progress)} status={status === 'FAILED' ? 'exception' : 'active'} strokeColor={STATUS_COLOR[status] || undefined} strokeWidth={10} />
+      <div style={{ marginTop: 3 }}>
+        <Progress percent={Math.round(progress)} status={status === 'FAILED' ? 'exception' : 'active'} strokeColor={STATUS_COLOR[status] || undefined} strokeWidth={8} />
         <div className="job-card__meta">
           <Text style={{ fontSize: 13 }}>{message}</Text>
           <div className="job-card__stats">

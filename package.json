@@ -1,7 +1,7 @@
 {
   "name": "logscanner-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
-    ,"antd": "^5.10.1",
-    "react-virtuoso": "^3.7.0"
+    "react-dom": "^19.2.0",
+    "antd": "^5.10.1",
+    "react-virtuoso": "^3.7.0",
+    "dayjs": "^1.11.10",
+    "@ant-design/icons": "^5.2.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
